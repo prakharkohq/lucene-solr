@@ -138,6 +138,7 @@ public final class FrenchAnalyzer extends StopwordAnalyzerBase {
     final Tokenizer source = new StandardTokenizer();
     TokenStream result = new ElisionFilter(source, DEFAULT_ARTICLES);
     result = new LowerCaseFilter(result);
+    TokenStream result2=new ElisionFilter(source, DEFAULT_ARTICLES);
     result = new StopFilter(result, stopwords);
     if(!excltable.isEmpty())
       result = new SetKeywordMarkerFilter(result, excltable);
