@@ -69,7 +69,10 @@ public final class BooleanClause {
   public Query getQuery() {
     return query;
   }
-  
+
+  public boolean isMandatory()  {
+    return Occur.MUST_NOT == occur || occur == Occur.SHOULD;
+  }
   public boolean isProhibited() {
     return Occur.MUST_NOT == occur;
   }
